@@ -6,6 +6,11 @@
 <title>90-Day Fitness Tracker</title>
 <meta name="description" content="A simple installable widget to log your 90-day fitness challenge and get daily reminders." />
 <meta name="theme-color" content="#111827" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="FitTracker" />
+<meta name="format-detection" content="telephone=no" />
 <link rel="manifest" href="manifest.json" />
 <link rel="icon" href="icons/icon-192.png" />
 <link rel="apple-touch-icon" href="icons/icon-192.png" />
@@ -28,6 +33,11 @@
   <div id="reminderBanner" class="banner hidden">
     <span id="reminderBannerText"></span>
     <button id="dismissBanner" class="banner-close" aria-label="Dismiss">×</button>
+  </div>
+
+  <div id="iosInstallBanner" class="banner hidden">
+    <span>Install this app: tap <strong>Share</strong> <span aria-hidden="true">⎋</span> then <strong>Add to Home Screen</strong>.</span>
+    <button id="dismissIosBanner" class="banner-close" aria-label="Dismiss">×</button>
   </div>
 
   <nav class="tabs" role="tablist">

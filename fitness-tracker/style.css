@@ -94,7 +94,7 @@ h1 {
 
 .tab {
   flex: 1;
-  padding: 8px 12px;
+  padding: 11px 12px;
   border: none;
   background: transparent;
   color: var(--muted);
@@ -159,7 +159,7 @@ input, textarea, select {
   color: var(--text);
   border-radius: 10px;
   padding: 10px 12px;
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
   font-family: inherit;
 }
@@ -176,7 +176,7 @@ input:focus, textarea:focus, select:focus {
 
 .seg-btn {
   flex: 1;
-  padding: 9px 10px;
+  padding: 12px 10px;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--card-2);
@@ -203,7 +203,7 @@ input:focus, textarea:focus, select:focus {
 .mood-btn {
   flex: 1;
   font-size: 22px;
-  padding: 6px 0;
+  padding: 10px 0;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--card-2);

@@ -544,6 +544,28 @@
     document.getElementById("installBtn").classList.add("hidden");
   });
 
+  function isStandalone() {
+    return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  }
+
+  function isIosSafari() {
+    const ua = window.navigator.userAgent;
+    const isIos = /iPad|iPhone|iPod/.test(ua) || (ua.includes("Macintosh") && "ontouchend" in document);
+    const isSafari = /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+    return isIos && isSafari;
+  }
+
+  function maybeShowIosInstallBanner() {
+    if (isStandalone() || !isIosSafari()) return;
+    if (localStorage.getItem("fitnessTracker.iosBannerDismissed") === "1") return;
+    document.getElementById("iosInstallBanner").classList.remove("hidden");
+  }
+
+  document.getElementById("dismissIosBanner").addEventListener("click", () => {
+    localStorage.setItem("fitnessTracker.iosBannerDismissed", "1");
+    document.getElementById("iosInstallBanner").classList.add("hidden");
+  });
+
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker.register("sw.js").catch((err) => console.warn("SW registration failed", err));
@@ -554,4 +576,5 @@
   loadEntryIntoForm(currentDay);
   updateStats();
   maybeShowBanner();
+  maybeShowIosInstallBanner();
 })();
